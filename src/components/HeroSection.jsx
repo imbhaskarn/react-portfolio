@@ -50,7 +50,7 @@ const HeroSection = () => {
           >
             <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
               <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+                <span className="sr-only">Bhaskar Sharma</span>
                 <img
                   className="h-8"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -140,12 +140,11 @@ const HeroSection = () => {
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div>
-              <div>
-                    <span className="font-bold text-indigo-900 tracking-tight sm:text-center"> Hi my name is</span>
-                <h1 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-center sm:text-6xl">
-                    Bhaskar Sharma
+              <div>{/* <span className="font-bold text-indigo-900 tracking-tight sm:text-center"> Hi my name is</span> */}
+                <h1 className="text-4xl font-bold text-indigo-900 tracking-tight sm:text-center sm:text-6xl">
+                  <span className="text-gray-900">Hi I'm</span>  Bhaskar Sharma
                 </h1>
-                <h2 className="text-4xl font-bold text-gray-500 tracking-tight sm:text-center sm:text-6xl">
+                <h2 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-center sm:text-6xl">
                 I build things for the web.
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
