@@ -145,7 +145,7 @@ const HeroSection = () => {
                   <span className="text-gray-900">Hi I'm</span>  Bhaskar Sharma
                 </h1>
                 <h2 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-center sm:text-6xl">
-                I build things for the web.
+                I build things for the web
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
                   I'm a software engineer specializing in building exceptional
