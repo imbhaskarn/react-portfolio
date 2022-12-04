@@ -1,7 +1,11 @@
 /* This example requires Tailwind CSS v3.0+ */
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ArrowDownIcon,
+} from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -12,7 +16,7 @@ const navigation = [
 
 const HeroSection = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const [isShown, setIsShown] = useState(false);
   return (
     <div className="isolate bg-white">
       <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
@@ -80,8 +84,29 @@ const HeroSection = () => {
               ))}
             </div>
             <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-              <button className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">
-                Resume
+              <button
+                className="flex justify-center items-center rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700 w-24 h-10"
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
+              >
+                {!isShown ? (
+                  "Resume"
+                ) : (
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                )}
               </button>
             </div>
           </nav>
@@ -126,8 +151,30 @@ const HeroSection = () => {
                     ))}
                   </div>
                   <div className="py-6">
-                    <button className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">
-                      Resume
+                    <button
+                      className="flex justify-center items-center rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700 w-24 h-10"
+                      onMouseEnter={() => setIsShown(true)}
+                      onMouseLeave={() => setIsShown(false)}
+                    >
+                      {!isShown ? (
+                        "Resume"
+                      ) : (
+                        <span>
+                          {" "}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="w-6 h-6"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      )}
                     </button>
                   </div>
                 </div>
@@ -140,17 +187,18 @@ const HeroSection = () => {
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div>
-              <div>{/* <span className="font-bold text-indigo-900 tracking-tight sm:text-center"> Hi my name is</span> */}
+              <div>
+                {/* <span className="font-bold text-indigo-900 tracking-tight sm:text-center"> Hi my name is</span> */}
                 <h1 className="text-4xl font-bold text-indigo-900 tracking-tight sm:text-center sm:text-6xl">
-                  <span className="text-gray-900">Hi I'm</span>  Bhaskar Sharma
+                  <span className="text-gray-900">Hi I'm</span> Bhaskar Sharma
                 </h1>
-                <h2 className="text-4xl font-bold text-gray-900 tracking-tight sm:text-center sm:text-6xl">
-                I build things for the web
+                <h2 className="text-4xl font-bold text-gray-600 tracking-tight sm:text-center sm:text-6xl">
+                  I build things for the web
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
                   I'm a software engineer specializing in building exceptional
-                  digital experiences and cloud. Currently, I'm looking for an
-                  opportunity in backend develpment.
+                  digital experiences for web and cloud. Currently, I'm looking
+                  for an opportunity in backend develpment.
                 </p>
                 <div className="mt-8 flex gap-x-4 sm:justify-center">
                   <a
